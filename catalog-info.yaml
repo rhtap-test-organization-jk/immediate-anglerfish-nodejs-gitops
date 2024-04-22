@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: immediate-anglerfish-nodejs-gitops
+  description: This is GitOps manifest for immediate-anglerfish-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: immediate-anglerfish-nodejs
+    janus-idp.io/tekton: immediate-anglerfish-nodejs 
+    backstage.io/kubernetes-id: immediate-anglerfish-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:immediate-anglerfish-nodejs
